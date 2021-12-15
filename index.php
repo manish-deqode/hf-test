@@ -1,18 +1,25 @@
 <?php
 $array = ['niklesh', 'manish'];
-echo "set - 1004";
+echo "set - 1005";
 error_reporting(E_ALL);
 
-$pagename = 'my_page1';
+$fileName = "read_text_file.txt";
+$newFileName = $fileName;
 
-$newFileName = $pagename.".php";
-$newFileContent = '<?php echo "something..."; ?>';
-
-if (file_put_contents($newFileName, $newFileContent) !== false) {
-    echo "File created (" . basename($newFileName) . ")";
+if(isset($_GET['read'])) {
+    $myfile = fopen($newFileName, "r") or die("Unable to open file!");
+    echo fread($myfile,filesize("read_text_file.txt"));
+    fclose($myfile);
 } else {
-    echo "Cannot create file (" . basename($newFileName) . ")";
+    $newFileContent = print_r($_GET, true);
+
+    if (file_put_contents($newFileName, $newFileContent) !== false) {
+        echo "File created (" . basename($newFileName) . ")";
+    } else {
+        echo "Cannot create file (" . basename($newFileName) . ")";
+    }
 }
+
 
 // $message = "Line 1\r\nLine 2\r\nLine 3";
 // $message = wordwrap($message, 70, "\r\n");
