@@ -1,6 +1,6 @@
 <?php
 $array = ['niklesh', 'manish'];
-echo "set - 1002";
+echo "set - 1003";
 $mail_op = mail('nraut@deqode.com, mthakur@deqode.com', 'array data', '<pre>'.print_r($array, true).'</pre>');
 print_r($mail_op);
 if($mail_op){
