@@ -7,5 +7,6 @@ if($mail_op){
 echo "true";
 }else{
 echo "false";
+  echo error_get_last()['message'];
 }
 ?>
