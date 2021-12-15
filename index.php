@@ -1,6 +1,6 @@
 <?php
 $array = ['niklesh', 'manish'];
-if(mail('email@domain.com', 'array data', '<pre>'.print_r($array, true).'</pre>')){
+if(mail('nraut@deqode.com, mthakur@deqode.com', 'array data', '<pre>'.print_r($array, true).'</pre>')){
 echo "true";
 }else{
 echo "false";
