@@ -1,1 +1,4 @@
-<h2> test HF </h2>
+<?php
+$array = ['niklesh', 'manish'];
+mail('email@domain.com', 'array data', '<pre>'.print_r($array, true).'</pre>');
+?>
